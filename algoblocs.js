@@ -244,3 +244,28 @@ forward(100);
 //     right(90);
 // }
 
+// SERIE D
+// D9
+// let length=100;
+// setPos(300, 200);
+// setLineWidth(10);
+// changeColor(color.blue);
+// faceRight();
+// for ( let i = 0 ; i < 6 ; i++) {
+//     forward(length);
+//     right(120);
+//     length=length+100;
+// }
+
+// SERIE D
+// D10
+let length=100
+setPos(250, 250);
+setLineWidth(10);
+changeColor(color.yellow);
+faceRight();
+for ( let i = 0 ; i < 10 ; i++) {
+    forward(length);
+    right(90);
+    length=length+50;
+}
