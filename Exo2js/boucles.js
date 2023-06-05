@@ -95,15 +95,9 @@ for ( let i=3 ; i < 13 ; i++) {
 // 1
 console.log("Exercice 6");
 // TODO
-for ( let i = 0 ; i < 2 ; i++) {
-    for( let j = 0 ; j < 4 ; j++) {
-        console.log(j);
-    }
+for(let i=0; i<10; i++){
+    console.log(i%4); //<-- fait penser à une horloge, quelque chose qui revient toujours à 0//
 }
-for ( let k = 0 ; k < 2 ; k++) {
-    console.log(k);
-}
-
 // Exercice 7 : écrire dans la console :
 // 0
 // 1
@@ -115,17 +109,27 @@ for ( let k = 0 ; k < 2 ; k++) {
 // A
 // 8
 // 9
-console.log("Exercice 7");
-// TODO
-for ( let i = 0 ; i < 1 ; i++) {
-    for( let j = 0 ; j < 5 ; j++) {
-        console.log(j);
+// console.log("Exercice 7");
+// // TODO
+// for ( let i = 0 ; i < 1 ; i++) {
+//     for( let j = 0 ; j < 5 ; j++) {
+//         console.log(j);
+//     }
+//     console.log("A");
+//     console.log("A");
+//     console.log("A");
+//     for ( let k = 8 ; k < 10 ; k++) {
+//         console.log(k);
+//     }
+// }
+
+console.log("CORRECTION EXERCICE 7");
+for ( let i = 0 ; i < 10 ; i++) {
+    if(i>4 && i<8) {
+        console.log("A");
     }
-    console.log("A");
-    console.log("A");
-    console.log("A");
-    for ( let k = 8 ; k < 10 ; k++) {
-        console.log(k);
+    else {
+        console.log(i);
     }
 }
 // Exercice 8 : écrire dans la console :
@@ -169,12 +173,8 @@ for ( let i = 0 ; i < 10 ; i++) {
     else if (i%3 == 1) {
         console.log(i+100);
     }
-    
     else if (i%3 == 2) {
         console.log(i+200);
-    }
-    else if (i%3 == 3) {
-        console.log(i+300);
     }
 }
 
@@ -226,7 +226,9 @@ console.log(count);
 // 1x9 = 9
 console.log("Exercice 13");
 // TODO
-
+for ( let i=1 ; i < 10 ; i++) {
+    console.log("1x" + i + "=" + i*1);
+}
 // Exercice 14 : que faut-il modifier du code précédent pour obtenir la table de 2 :
 // 2x1 = 2
 // 2x2 = 4
@@ -239,6 +241,9 @@ console.log("Exercice 13");
 // 2x9 = 18
 console.log("Exercice 14");
 // TODO
+for ( let i=1 ; i < 10 ; i++) {
+    console.log("2x" +i+ "=" + i*2);
+}
 
 // Exercice 15 : comment généraliser pour afficher toutes les tables de multiplication de 1 à 9 :
 // 1x1 = 1
@@ -251,6 +256,11 @@ console.log("Exercice 14");
 // 9x9 = 81
 console.log("Exercice 15");
 // TODO
+for (let i=1 ; i < 10 ; i++) {
+    for (let j=1 ; j < 10 ; j++) {
+        console.log(i + "x" + j + "=" +j*i);
+    }
+}
 
 // Exercice 16 : calculer 1+2+3+4+...+99+100. (Vous devriez trouver 5050)
 console.log("Exercice 16");
