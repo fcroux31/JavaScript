@@ -149,16 +149,60 @@ fbonus(tabbonus);
 
 // EXO BONUS MAISON
 
-function benito(n,m) {
-        let longueur = 0
-        for ( let i = n.length/2 ; i < 15; i++) {
-                if (m < n.length/2) {
-                        longueur == n.length-14;
-                }
-                else if (m > n.length/2) {
-                        longueur == n.length+14;
-                }
+function binarySearch(value, array, i1, i2) {
+        console.log("Je cherche", value, "entre les numéros", i1, "et", i2, ".");
+        if(i1 > i2) {
+        return false;
+        }
+        let middle = (i1+i2)/2; // Problème si ça ne tombe pas pile ! -> Il faut arrondir la valeur
+        middle = Math.floor(middle);
+        console.log("Je regarde la case numéro", middle, "qui contient", array[middle]);
+        if(array[middle] == value) {
+        return true;
+        } else if(array[middle] < value) {
+        return binarySearch(value, array, middle+1, i2);
+        } else {
+        return binarySearch(value, array, i1, middle-1);
         }
 }
-benito(tabbonus);
-console.log(benito(tabbonus, 6));
+
+function search(value, array) {
+        return binarySearch(value, array, 0, array.length-1);
+}
+
+let small_array = [0,2,4,6,8,10,12,14,16,18];
+let big_array = [];
+for(let i = 0 ; i < 2000000 ; i=i+2) {
+        big_array.push(i);
+}
+
+console.log("Le petit tableau contient", small_array.length, "éléments.");
+console.log("Le grand tableau contient", big_array.length, "éléments.");
+console.log("======================");
+console.log("Tests en cherchant une valeur qui existe")
+console.log("======================");
+console.log(search(2, small_list));
+console.log(search(14, small_list));
+console.log(search(2, big_list));
+console.log(search(1111222, big_list));
+console.log("Tests avec des valeurs qui n'existent pas");
+console.log(search(3, small_array));
+console.log(search(15, small_array));
+console.log(search(3, big_array));
+console.log(search(1111223, big_array));
+
+function binary_search_2(value, array) {
+        let i1 = 0;
+        let i2 = array.length-1;
+        while(i1 <= i2) {
+                let middle = Math.floor((i1+i2)/2);
+                if(array[middle] == value) {
+                        return true;
+                } else if(array[middle] < value) {
+                        i1 = middle+1;
+                } else {
+                        i2 = middle-1;
+                }
+        }
+        return false;
+}

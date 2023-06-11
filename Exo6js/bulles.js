@@ -2,6 +2,26 @@
 
 // Étape 1 : écrire une fonction qui reçoit un tableau et un numéro de case (i). Son but est d'échanger les valeurs des cases i et i+1 si celles-ci ne sont pas dans le bon ordre.
 
+let tab1 = [626, 52, 558, 557, 9952, 25, 63, 5622, 34956];
+
+function turbo(n) {
+    let verif = false;
+    while (!verif) {
+        verif = true;
+        for (let i = 0 ; i < n.length -1 ; i++) {
+            if (n[i] > n[i + 1]) {
+                let temp = n[i];
+                n[i] = n[i + 1];
+                n[i + 1] = temp;
+                verif = false;
+            }
+        }
+    }
+    return n;
+}
+
+console.log(turbo(tab1));
+
 // Étape 2 : écrire une fonction qui reçoit un tableau et qui applique l'étape 1 sur toutes les cases successives (cases 0/1, cases 1/2, cases 2/3, ..., cases avant-dernière/dernière).
 
 // Étape 3 : écrire une fonction qui reçoit un tableau et qui le trie en appelant la fonction 2 autant de fois qu'il y a d'éléments dans le tableau.
